@@ -2,7 +2,7 @@ var formulario = document.querySelector("#form")
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault(); //Agregué el default
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -26,7 +26,7 @@ formulario.onsubmit = function(e) {
 if (nombre.length > 0 
   && (edad > 18 
     && edad < 120) ) {
-  agregarInvitado(nombre, edad, nacionalidad)
+  agregarInvitado(nombre, edad, nacionalidad); //agregué punto y coma
   }
 }
 
@@ -34,7 +34,7 @@ var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
 botonBorrar.id = "boton-borrar"
 var corteLinea = document.createElement("br")
-document.body.appendChild(corteLinea)
+document.body.appendChild(corteLinea); //agregué punto y coma
 document.body.appendChild(botonBorrar);
 
 function agregarInvitado(nombre, edad, nacionalidad) {
@@ -55,8 +55,8 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
-lista.appendChild(elementoLista)
+elementoLista.classList.add("elemento-lista") //Modifiqué la palabra added por add que si existe
+lista.appendChild(elementoLista); //agregué punto y coma
 
 var spanNombre = document.createElement("span")
 var inputNombre = document.createElement("input")
@@ -87,11 +87,11 @@ var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
 botonBorrar.id = "boton-borrar"
 var corteLinea = document.createElement("br")
-elementoLista.appendChild(corteLinea)
+elementoLista.appendChild(corteLinea); //Agregé un punto y coma
 elementoLista.appendChild(botonBorrar);
 
  botonBorrar.onclick = function() {
 // this.parentNode.style.display = 'none';
-botonBorrar.parentNode.remove()
+botonBorrar.parentNode.remove(); //agregué punto y coma
   }
 }
